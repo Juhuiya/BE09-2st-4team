@@ -1,95 +1,42 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"; // Next.js 13 이상에서 클라이언트 컴포넌트임을 명시
+
+import { useState, useEffect } from "react";
+import BannerSlider from "../components/BannerSilider.jsx";
+import "../styles/main.css"; // 메인 페이지 스타일 import
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="home-container">
+      {/* 메인 슬라이더/캐러셀 */}
+      <section className="main-slider-section">
+        <BannerSlider />
+      </section>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      {/* 프로모션 및 이벤트 섹션 */}
+      <section className="promotion-section">
+        <h2 className="section-title">배라의 다양한 혜택과 이벤트</h2>
+        <div className="events-container">
+          {/* 이벤트 카드들이 들어갈 자리 */}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* 신제품 소개 섹션 */}
+      <section className="new-products-section">
+        <h2 className="section-title">새로 나온 배라의 신제품</h2>
+        <div className="products-slider">{/* 제품 카드들이 들어갈 자리 */}</div>
+      </section>
+
+      {/* 브랜드 스토리 및 사회공헌 섹션 */}
+      <section className="brand-section">
+        <h2 className="section-title">배라와 함께하는 가치 있는 같이</h2>
+        {/* 브랜드 스토리 내용 */}
+      </section>
+
+      {/* 매장 찾기 섹션 */}
+      <section className="store-finder-section">
+        <h2 className="section-title">내 주변 가까운 배스킨라빈스 매장</h2>
+        {/* 매장 찾기 UI */}
+      </section>
+    </main>
   );
 }
